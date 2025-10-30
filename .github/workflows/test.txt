@@ -1,0 +1,10 @@
+Phase 1 - Local Setup, Repository and Script ready to go ✅
+Phase 2 - Droplet or EC2 server Setup ✅
+Phase 3 - Deploy Script and Testing on the server (crontab) ✅
+Phase 4 - GitHub Actions CI/CD ✅
+Phase 5 - Additional enhancements (slack or email notifications)
+Phase 6 - Documentation and Summary (edit README)
+
+___
+
+# Test Deployment
