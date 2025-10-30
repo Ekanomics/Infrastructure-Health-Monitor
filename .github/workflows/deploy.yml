@@ -1,0 +1,29 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    # Use Ubuntu runner (GitHub's server)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+        # Explanation: Downloads your repository code to GitHub's server
+
+      # Step 2: Deploy via SSH
+      - name: Deploy to Server
+        uses: appleboy/[email protected]
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd /opt/monitoring/Infrastructure-Health-Monitor
+            git pull origin main
+            chmod +x monitoringscript.sh
+            echo "Deployment completed at $(date)"
