@@ -8,6 +8,27 @@ BLUE='\e[36m'
 BOLD='\e[1m'
 RESET='\e[0m'
 
+# SLACK_WEBHOOK_URL="https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+
+# Modify alert function
+# send_alert() {
+#     local resource=$1
+#     local usage=$2
+#     local message="⚠️ Alert: ${resource} usage at ${usage}% on $(hostname)"
+    
+#     # Log to file
+#     echo "[ALERT] $(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
+    
+    # # Send to Slack
+    # curl -X POST -H 'Content-type: application/json' \
+    #     --data "{\"text\":\"$message\"}" \
+    #     "$SLACK_WEBHOOK_URL"
+
+    # send_email_alert() {
+    # echo "$1" | mail -s "Server Alert: $2" your-email@example.com
+# }
+# }
+
 # Configuration
 CPU_THRESHOLD=80
 MEMORY_THRESHOLD=80
