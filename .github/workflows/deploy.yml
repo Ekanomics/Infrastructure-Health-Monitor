@@ -17,11 +17,12 @@ jobs:
 
       # Step 2: Deploy via SSH
       - name: Deploy to Server
-        uses: appleboy/[email protected]
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
           script: |
             cd /opt/monitoring/Infrastructure-Health-Monitor
             git pull origin main
